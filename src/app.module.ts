@@ -7,7 +7,7 @@ import { StudentSchema } from './schema/student.schema';
 import { StudentService } from './service/student/student.service';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost:27017/studentdb'),
+  imports: [MongooseModule.forRoot('mongodb://localhost:27017',{dbName: 'studentdb'}),
   MongooseModule.forFeature([{ name: 'Student', schema: StudentSchema }])],
   controllers: [AppController,StudentController],
   providers: [AppService,StudentService],
